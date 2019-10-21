@@ -1,0 +1,20 @@
+name: Build and sign WebExtension
+author: Fabian Große
+description: Builds your WebExtension using Mozilla's web-ext tool. Optionally also signs it.
+
+inputs:
+  sign_listed:
+    description: "Sign package to be listed on AMO? Set to true."
+    required: true
+    default: false
+  sign_unlisted:
+    description: "Sign package for self-distribution (downloads a signed .xpi you can use in other actions)? Set to true."
+    required: true
+    default: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.sign_listed }}
+    - ${{ inputs.sign_unlisted }}
