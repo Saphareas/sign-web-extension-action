@@ -28,5 +28,4 @@ runs:
     WEB_EXT_API_KEY: ${{ inputs.amo-api-key }}
     WEB_EXT_API_SECRET: ${{ inputs.amo-api-secret }}
     WEB_EXT_ID: ${{ inputs.web-ext-id }}
-  args:
-    - ${{ inputs.sign_listed }}
+    SIGN_LISTED: ${{ inputs.sign-listed }}
