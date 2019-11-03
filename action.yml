@@ -1,29 +1,32 @@
 name: Build and sign WebExtension
 author: Fabian Große
-description: Builds your WebExtension using Mozilla's web-ext tool. Optionally also signs it.
+description: Builds and signs your WebExtension using Mozilla's web-ext tool.
+branding:
+  icon: upload
+  color: orange
 
 inputs:
   amo-api-key:
-    description: "Your key for Mozilla's API"
+    description: Your key for Mozilla's API
     required: true
 
   amo-api-secret:
-    description: "Your secret for Mozilla's API"
+    description: Your secret for Mozilla's API
     required: true
 
   web-ext-id:
-    description: "UUID of your existing extension. Signing new extensions is not supported."
+    description: UUID of your existing extension. Signing new extensions is not supported.
     required: true
 
   sign-listed:
-    description: "Set to 'true' to list the extension on AMO. Defaults to 'false' for unlisted signing."
+    description: Set to 'true' to list the extension on AMO. Defaults to 'false' for unlisted signing.
     required: true
     default: false
 
 
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: docker
+  image: Dockerfile
   env:
     WEB_EXT_API_KEY: ${{ inputs.amo-api-key }}
     WEB_EXT_API_SECRET: ${{ inputs.amo-api-secret }}
