@@ -37,6 +37,8 @@ runs:
   using: docker
   image: Dockerfile
   env:
+    WEB_EXT_SOURCE_DIR: ${{ inputs. web-ext-source-dir }}
+    WEB_EXT_TARGET_DIR: ${{ inputs. web-ext-target-dir }}
     WEB_EXT_API_KEY: ${{ inputs.amo-api-key }}
     WEB_EXT_API_SECRET: ${{ inputs.amo-api-secret }}
     WEB_EXT_ID: ${{ inputs.web-ext-id }}
