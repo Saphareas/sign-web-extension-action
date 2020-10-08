@@ -6,6 +6,16 @@ branding:
   color: orange
 
 inputs:
+  web-ext-source-dir:
+    description: Directory where the manifest.json is located.
+    required: false
+    default: "."
+
+  web-ext-target-dir:
+    description: Output signed file to this directory.
+    required: false
+    default: "."
+
   amo-api-key:
     description: Your key for Mozilla's API
     required: true
@@ -22,7 +32,6 @@ inputs:
     description: Set to 'true' to list the extension on AMO. Defaults to 'false' for unlisted signing.
     required: true
     default: false
-
 
 runs:
   using: docker
